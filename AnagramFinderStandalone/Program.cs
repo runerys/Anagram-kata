@@ -10,8 +10,7 @@ namespace AnagramFinderStandalone
         {
             (
                 from word in ReadFile(args[0]).AsParallel()
-                let sorted = new string(word.ToCharArray().OrderBy(c => c).ToArray())
-                group word by sorted into anagramGroup
+                group word by new string(word.ToCharArray().OrderBy(c => c).ToArray()) into anagramGroup
                 where anagramGroup.Count() > 1
                 select string.Join(" ", anagramGroup)
             ).ToList()

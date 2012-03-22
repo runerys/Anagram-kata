@@ -48,6 +48,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AnagramsFinderFSharp\AnagramsFinderFSharp.fsproj">
+      <Project>{305B0F6B-E9B0-43FF-8DF3-C2BEACD69E04}</Project>
+      <Name>AnagramsFinderFSharp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Anagram\Anagram.csproj">
       <Project>{10E49738-9C1C-439B-BC0E-EBF635637BDC}</Project>
       <Name>Anagram</Name>
@@ -55,6 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="input\wordlist.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

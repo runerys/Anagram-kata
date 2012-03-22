@@ -55,17 +55,6 @@
             Assert.IsTrue(printedLines.Contains("blue lueb"), "Should have printed the words in same line");
         }
 
-        //[TestMethod]
-        //public void GivenDuplicated_ShouldOnlyBePrintedOnce()
-        //{
-        //    var word = new[] { "word", "drow", "word" };
-        //    var printedLines = new List<string>();
-
-        //    RunFinder(word, printedLines);
-
-        //    Assert.IsTrue(printedLines.Contains("word drow"), "No duplicates");
-        //}
-
         [TestMethod]
         public void GivenTwoAnagramsPollutedWithWhitespace_ShouldPrintItInOneLine()
         {
@@ -87,27 +76,6 @@
 
             Assert.IsTrue(printedLines.Contains("word drow"), "Should have printed the words in same line");
         }
-
-        [TestMethod]
-        public void PerformanceTest()
-        {
-            var realwords = @"C:\Users\rune.rystad\Downloads\wordlist.txt";
-
-            var anagramFinder = new AnagramFinderOriginal();
-            
-            var lines = new List<string>();
-            anagramFinder.PrintLine = lines.Add;
-
-            var stopwatch = Stopwatch.StartNew();
-            anagramFinder.FindInFile(realwords);            
-            stopwatch.Stop();
-
-            //lines.ForEach(Console.WriteLine);
-
-            Debug.WriteLine("Found {0} anagrams in {1}ms",  lines.Count, stopwatch.ElapsedMilliseconds);
-        }
-
-
 
         private static void RunFinder(string[] word, List<string> printedLines)
         {
